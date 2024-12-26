@@ -22,7 +22,8 @@ function News(props) {
 
     const fetchData = async () => {
         props.loadingBar(10);
-        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.newsApi}&page=${page}&pageSize=${props.pagesize}`;
+        //  let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.newsApi}&page=${page}&pageSize=${props.pagesize}`;
+        let url = `https://gnews.io/api/v4/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.newsApi}&page=${page}&max=${props.pagesize}`;
         console.log(url);
         setloading(true);
         props.loadingBar(30);
@@ -56,7 +57,7 @@ function News(props) {
                 <div className="row">
                     {!loading && articles.map((elem) => {
                         return <div className="col-md-4" key={elem.url}>
-                            <NewsItem title={elem.title ? elem.title.slice(0, 45) : ""} description={elem.description ? elem.description.slice(0, 90) : ""} imgUrl={elem.urlToImage ? elem.urlToImage : "https://img.etimg.com/thumb/msid-106520531,width-1070,height-580,overlay-etmarkets/photo.jpg"} newsUrl={elem.url} date={elem.publishedAt} author={elem.author} newsSource={elem.source.name} />
+                            <NewsItem title={elem.title ? elem.title.slice(0, 45) : ""} description={elem.description ? elem.description.slice(0, 90) : ""} imgUrl={elem.image ? elem.image : "https://img.etimg.com/thumb/msid-106520531,width-1070,height-580,overlay-etmarkets/photo.jpg"} newsUrl={elem.url} date={elem.publishedAt} author={elem.author} newsSource={elem.source.name} />
                         </div>
                     })}
 

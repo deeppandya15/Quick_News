@@ -14,7 +14,7 @@ function App() {
 
   const [navLoading, setNavLoading] = useState(0)
   // const newsapi = import.meta.env.VITE_NEWS_API;      //accessing Api from .env file 
-  const newsapi = '22b58b9cf7ac4cb3b31d126b95cbfd44'
+  const newsapi = '07a16766db8c27d085f39154babf7690'
   return (
     <>
       <Router>
