@@ -23,7 +23,7 @@ function News(props) {
     const fetchData = async () => {
         props.loadingBar(10);
         //  let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.newsApi}&page=${page}&pageSize=${props.pagesize}`;
-        let url = `https://gnews.io/api/v4/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.newsApi}&page=${page}&max=${props.pagesize}`;
+        let url = `https://gnews.io/api/v4/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.newsApi}&page=${page}`;
         console.log(url);
         setloading(true);
         props.loadingBar(30);
@@ -63,10 +63,10 @@ function News(props) {
 
                 </div>
 
-                <div className='container d-flex justify-content-between'>
+                {/* <div className='container d-flex justify-content-between'>
                     <button disabled={page <= 1} type="button" className="btn btn-dark" onClick={handlePrevious}>&larr; Previous</button>
                     <button disabled={articles.length === 0} type="button" className="btn btn-dark" onClick={handleNext}>	Next &rarr;</button>
-                </div>
+                </div> */}
             </div>
         </>
     )
